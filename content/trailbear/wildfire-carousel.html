@@ -1,8 +1,7 @@
-<title>TrailBear — Wildfire Carousel</title>
+<title>TrailBear — Grizzly 222 & the wildfire series</title>
 <style>
   :root {
-    --char:#14170F; --char-2:#1E231A; --ash:#F2EDE4; --ember:#D98A3A;
-    --scorch:#B8512A; --sage:#878E76;
+    --char:#14170F; --ash:#F2EDE4; --ember:#D98A3A; --sage:#878E76;
     --bg:#FBF9F4; --surface:#FFFFFF; --ink:#1F241B; --ink-2:#5C6455;
     --rule:#E2DDD0; --accent:#A8541F; --accent-soft:#F5E9DC;
   }
@@ -22,9 +21,8 @@
     line-height:1.6; -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
-  .serif{font-family:"Iowan Old Style",Georgia,"Times New Roman",serif}
 
-  header{border-bottom:1px solid var(--rule);padding-bottom:28px;margin-bottom:36px}
+  header{border-bottom:1px solid var(--rule);padding-bottom:28px;margin-bottom:12px}
   .eyebrow{
     font-size:11px;letter-spacing:.16em;text-transform:uppercase;
     color:var(--accent);font-weight:600;margin-bottom:12px
@@ -37,11 +35,16 @@
 
   h2{
     font-family:"Iowan Old Style",Georgia,serif;font-weight:400;
-    font-size:clamp(22px,4.5vw,28px);margin:56px 0 6px;text-wrap:balance
+    font-size:clamp(22px,4.5vw,28px);margin:52px 0 6px;text-wrap:balance
   }
-  .sect-note{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+  .sect-note{color:var(--ink-2);font-size:15px;margin:0 0 26px;max-width:62ch}
 
-  /* ---- slide mockups ---- */
+  .ep{
+    display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);background:var(--accent-soft);
+    padding:4px 10px;border-radius:4px;margin:48px 0 0
+  }
+
   .slide{
     margin:0 0 14px;border:1px solid var(--rule);border-radius:10px;
     background:var(--surface);overflow:hidden
@@ -73,7 +76,7 @@
   .copy em{font-style:normal;color:var(--ember)}
   .big{
     font-family:"Iowan Old Style",Georgia,serif;
-    font-size:clamp(52px,15vw,86px);line-height:1;color:var(--ember);
+    font-size:clamp(48px,13vw,78px);line-height:1;color:var(--ember);
     margin:0 0 10px;text-shadow:0 2px 18px rgba(0,0,0,.6)
   }
   .kicker{
@@ -103,177 +106,222 @@
   }
   .cap .mono{
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-    font-size:13.5px;color:var(--ink-2);word-break:break-word;line-height:1.7
+    font-size:13.5px;color:var(--ink-2);word-break:break-word;line-height:1.7;margin:0
   }
 
   ul{padding-left:20px;margin:12px 0}
   li{margin-bottom:9px;font-size:15px}
   li::marker{color:var(--accent)}
 
-  .week{border-top:1px solid var(--rule);margin-top:12px}
-  .day{
-    display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);
-    align-items:flex-start
-  }
-  .day .when{
-    flex:0 0 88px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  .arc{border-top:1px solid var(--rule);margin:20px 0 0}
+  .beat{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+  .beat .when{
+    flex:0 0 96px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
     font-weight:700;color:var(--accent);padding-top:3px
   }
-  .day .what{flex:1}
-  .day .what h4{margin:0 0 3px;font-size:15.5px;font-weight:600}
-  .day .what p{margin:0;font-size:14px;color:var(--ink-2)}
+  .beat .what{flex:1;font-size:14.5px;color:var(--ink-2)}
+  .beat .what strong{color:var(--ink);font-weight:600}
+  @media (max-width:520px){ .beat{flex-direction:column;gap:3px} .beat .when{flex:none} }
 
   footer{
     margin-top:56px;padding-top:24px;border-top:1px solid var(--rule);
     font-size:13px;color:var(--ink-2)
   }
   footer a{color:var(--accent)}
-  @media (max-width:520px){
-    .day{flex-direction:column;gap:4px}
-    .day .when{flex:none}
-  }
 </style>
 
 <div class="wrap">
 
 <header>
-  <div class="eyebrow">TrailBear · Carousel script</div>
-  <h1>The fire isn't what kills them</h1>
-  <p class="sub">Eight slides for tomorrow. Tragedy pillar, live-news timing, lands on the safety lane. Every figure below is sourced and dated — check the notes before you publish.</p>
+  <div class="eyebrow">TrailBear · Character-led series</div>
+  <h1>Grizzly 222</h1>
+  <p class="sub">You were right to want a name on this. 222 has a bigger arc than either of us thought — and unlike Grinder, hers isn't finished. Two posts below: her story tomorrow, the general wildfire piece as episode two.</p>
 </header>
 
-<h2>Why this one, and why tomorrow</h2>
-<p class="sect-note">Your instinct on the wildfire angle was the right call — it's a stronger post than the moose re-cut, and it's the one that decays if you wait.</p>
+<h2>Why the character goes first</h2>
+<p class="sect-note">The original deck had 222 buried on slide 3 of a wildfire explainer. That was backwards. A character post with a fire hook beats a fire explainer with a character in it — Grinder proved that at 106K.</p>
 <ul>
-  <li><strong>It's live news.</strong> 109 fires are burning in B.C. right now. That's the same ingredient that made the Grinder post work — you're answering a question people are already asking.</li>
-  <li><strong>It's your pillar, done right.</strong> Not "bears die" — a named bear with a story, at stakes. Grizzly 222 walking her cubs out of the Jasper fire is the emotional spine.</li>
-  <li><strong>It converts.</strong> The grief lands on "secure your attractants," which is the account's actual job. Tragedy in, safety out.</li>
-  <li><strong>The hook inverts an assumption.</strong> Same engine as your 6K "oversized raccoons" post — the reader is wrong about something, and the swipe tells them how.</li>
+  <li><strong>She's a redemption arc, not just a survival story.</strong> In 2023 she was relocated for getting into food at a busy picnic area — a food-conditioned bear, the kind whose story usually ends badly. Grinder's story ended in grief. Hers is still going. That's the difference between a spike and a follow.</li>
+  <li><strong>She has an unfinished storyline.</strong> Her cubs are old enough to strike out on their own around now. That's a genuine "what happens next" you can come back to — the thing you said you'd already exhausted with Coola.</li>
+  <li><strong>The safety lesson is inside the character.</strong> You don't have to bolt "secure your attractants" onto the end. She <em>is</em> the lesson — a bear who got a second chance most don't.</li>
 </ul>
 
-<h2>The slides</h2>
-<p class="sect-note">Copy is final — lift it as written. Mockups show placement and emphasis; drop your photo behind each.</p>
+<h2>Her actual arc</h2>
+<p class="sect-note">Everything below is reported. Enough material here for four or five posts, not one.</p>
+<div class="arc">
+  <div class="beat"><div class="when">2023</div><div class="what">Relocated with cubs after <strong>getting into food at a busy picnic area</strong>. Flagged as a bear of management concern.</div></div>
+  <div class="beat"><div class="when">June 2024</div><div class="what">Comes back to her old ground near the Jasper Park Lodge anyway. Bears almost always do.</div></div>
+  <div class="beat"><div class="when">Jul 24 2024</div><div class="what">Winds to <strong>100 km/h</strong> drive the largest Jasper fire in a century at the townsite. She takes both cubs to <strong>a wet spot by the Athabasca River</strong> and stays.</div></div>
+  <div class="beat"><div class="when">After</div><div class="what">Fire burns ~79,000 acres and a third of the town — 358 structures. <strong>All three bears walk out.</strong></div></div>
+  <div class="beat"><div class="when">Late 2024</div><div class="what">A few days on the Jasper Park golf course, then high into the Maligne Valley. <strong>She never goes back into the burn.</strong></div></div>
+  <div class="beat"><div class="when">Jun 2025</div><div class="what">Staff swap her collar for a new one and <strong>ear-tag both cubs</strong>.</div></div>
+  <div class="beat"><div class="when">Now</div><div class="what">Cubs at the age where they'd separate from her. <em>Confirm the current status with Parks Canada before you say it on a slide.</em></div></div>
+</div>
+
+<div class="ep">Post one · tomorrow</div>
+<h2>She didn't run</h2>
+<p class="sect-note">Eight slides. Copy is final — lift as written.</p>
 
 <div class="slide">
-  <div class="mock center"><div class="idx">Slide 1 · hook</div>
+  <div class="mock center"><div class="idx">1 · hook</div>
+    <p class="copy">When the fire came for Jasper, a grizzly called <em>222</em> didn't run.<br><br>Her GPS collar recorded exactly what she did instead.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Orange smoke, or a grizzly in profile. Darkest frame you have.</p></div>
+    <div class="row"><span class="tag">Why</span><p>Surprising claim, mechanism withheld. The collar detail promises evidence — that's what makes it feel like a document, not a story.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">2 · stakes</div>
+    <p class="copy">July 24, 2024. Winds to <em>100 km/h</em>. The largest wildfire in Jasper in a hundred years, running straight at the town.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Fire front or heavy smoke over the valley.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">3 · the reveal</div>
+    <p class="copy">She walked her two cubs down to a wet spot on the Athabasca River.<br><br>And stayed there.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>River, ideally with smoke behind it. Quiet frame — this is the held breath.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">4 · payoff</div>
+    <p class="big">79,000</p>
+    <p class="copy">acres burned. A third of the town gone — 358 buildings.<br><br>All three bears walked out.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Burn scar, or the sow with cubs. Emotional peak.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">5 · the twist</div>
+    <p class="copy">Here's the part people don't know.<br><br>The year before, 222 was relocated — for getting into food at a picnic area.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Picnic table, cooler, or garbage bin. Deliberately mundane after slide 4.</p></div>
+    <div class="row"><span class="tag">Why</span><p>Recontextualizes her. She stops being a symbol and becomes a bear with a record — which is what makes slide 6 land.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">6 · stakes, again</div>
+    <p class="copy">She came back the next June. They almost always do.<br><br>And for a bear that keeps coming back to human food, the next chapter usually isn't a wildfire story. It's a conservation officer.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Empty road at dusk, or a green bin. Not a dead bear.</p></div>
+    <div class="row"><span class="tag">Careful</span><p>Phrased as the general pattern — relocated bears return, food-conditioned bears often end up destroyed. Both well established. <strong>Don't</strong> claim 222 herself was ever slated for destruction; that isn't reported.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">7 · character</div>
+    <p class="copy">After the fire she spent a few days on the golf course, then took the cubs high into the Maligne Valley.<br><br>She never went back into the burn.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>High alpine, green country. The relief frame.</p></div>
+    <div class="row"><span class="tag">Why</span><p>Gives her judgment. She's not lucky — she made a call. That's what turns an animal into a character people follow.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock center"><div class="idx">8 · the ongoing hook</div>
+    <p class="kicker">She's still out there</p>
+    <p class="copy">Her cubs are old enough now to leave her and go it alone.<br><br>Which means the next hard year is theirs, not hers.<br><br>We'll keep following them.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Two young bears, or an empty trail.</p></div>
+    <div class="row"><span class="tag">Why</span><p>A real open loop, not a manufactured one — this is what makes the follow worth something. Verify the dispersal status first.</p></div>
+  </div>
+</div>
+
+<div class="cap">
+  <p class="mono">Grizzly 222 was relocated in 2023 for getting into food at a picnic area. A year later her GPS collar recorded her walking two cubs into the Athabasca River to survive the worst fire Jasper has seen in a century. 🐻🔥<br><br>She got a second chance. Most food-conditioned bears don't.<br><br>Sources pinned below. #grizzly #jasper #bears #bearsafety #wildfire #bcwildfire #wildlife #canada #jasperstrong #beawarebearaware</p>
+</div>
+
+<div class="ep">Post two · +2 to 3 days</div>
+<h2>The fire isn't what kills them</h2>
+<p class="sect-note">The general piece, now episode two — with an audience already invested in 222. Same eight-slide shape; only the changed slides are spelled out.</p>
+
+<div class="slide">
+  <div class="mock center"><div class="idx">1 · hook</div>
     <p class="copy">Everyone pictures bears dying in the flames.<br><br>That's not how a wildfire kills a bear.</p>
   </div>
   <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Wall of fire, or a bear silhouetted against orange smoke. <strong>Most dramatic frame you have</strong> — this slide's only job is the stop.</p></div>
-    <div class="row"><span class="tag">Why</span><p>States a surprising claim but withholds the mechanism. That's the gap the swipe closes — the thing your moose slide 1 gave away.</p></div>
+    <div class="row"><span class="tag">Why</span><p>Same assumption-flip engine as your 6K "oversized raccoons" post.</p></div>
   </div>
 </div>
 
 <div class="slide">
-  <div class="mock"><div class="idx">Slide 2 · credibility</div>
+  <div class="mock"><div class="idx">2 · credibility</div>
     <p class="big">3%</p>
-    <p class="copy">Researchers pulled together 31 studies that tracked collared animals straight through a wildfire. On average, the fire itself killed three percent of them.</p>
+    <p class="copy">Researchers pooled 31 studies that tracked collared animals straight through a wildfire. On average, the fire itself killed three percent of them.</p>
   </div>
   <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Quiet burned forest, black trunks. Let the number carry it.</p></div>
-    <div class="row"><span class="tag">Source</span><p>Nimmo et al., <em>Global Change Biology</em> 2022 — 31 species, 23 families, 1984–2020. Mean predicted mortality 3% (CI 1–9%). Severe fires 7%, mild 2%.</p></div>
+    <div class="row"><span class="tag">Source</span><p>Nimmo et al., <em>Global Change Biology</em> 2022. 31 species, 23 families, 1984–2020. Mean predicted mortality 3% (CI 1–9%); severe fires 7%, mild 2%.</p></div>
   </div>
 </div>
 
 <div class="slide">
-  <div class="mock"><div class="idx">Slide 3 · the named bear</div>
-    <p class="copy">During the Jasper fire, a grizzly called <em>222</em> took her two cubs down to the Athabasca River and waited it out.<br><br>Her GPS collar tracked the whole thing. All three walked away.</p>
+  <div class="mock"><div class="idx">3 · callback</div>
+    <p class="copy">You already met one of them.<br><br>222 got her cubs out. Then she had to live in what was left.</p>
   </div>
   <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Sow with cubs, or a river running through burned country. Warmest image in the deck — this is the hope beat.</p></div>
-    <div class="row"><span class="tag">Why</span><p>Your pillar is <strong>named bears with stories</strong>. This is the slide people screenshot, and it sets up the drop on slide 4.</p></div>
+    <div class="row"><span class="tag">Why</span><p>The callback is the whole point of running the character first — it rewards the people who saw post one and recruits the ones who didn't.</p></div>
   </div>
 </div>
 
 <div class="slide">
-  <div class="mock"><div class="idx">Slide 4 · the turn</div>
-    <p class="copy">Then the smoke clears, and she walks her cubs back into a home range with nothing left in it.<br><br>No berries. No roots. No cover.<br><br>And winter is nine weeks out.</p>
+  <div class="mock"><div class="idx">4–5 · the turn</div>
+    <p class="copy">A burned range has no berries, no roots, no cover.<br><br>A bear that can't fatten up won't survive hibernation — so it stops looking in the burn and starts looking downhill.</p>
   </div>
   <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Wide burn scar, ash, no green. Coldest, emptiest frame you have.</p></div>
-    <div class="row"><span class="tag">Why</span><p>The pivot. Slide 3 gave relief, this takes it back — that whiplash is what drives comments.</p></div>
+    <div class="row"><span class="tag">Image</span><p>Ash and black trunks, then a bear near a fence line or subdivision edge.</p></div>
   </div>
 </div>
 
 <div class="slide">
-  <div class="mock"><div class="idx">Slide 5 · mechanism</div>
-    <p class="copy">A bear that can't fatten up doesn't survive hibernation.<br><br>So it stops looking in the burn and starts looking downhill — orchards, campgrounds, green bins.</p>
+  <div class="mock"><div class="idx">6–7 · the cost</div>
+    <p class="copy">In <em>2023</em> — B.C.'s worst fire and drought year on record — conservation officers killed <em>603</em> black bears.<br><br>That same autumn, one shelter in Smithers took in more than <em>100</em> orphaned cubs. The most in 33 years.</p>
   </div>
   <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Bear on a road, near a fence line, or at the edge of a subdivision.</p></div>
-    <div class="row"><span class="tag">Why</span><p>Where the post stops being about fire and starts being about us. Don't rush this line.</p></div>
+    <div class="row"><span class="tag">Source</span><p>CBC/BCCOS: 460 killed in the first nine months of 2023 across 21,000 conflict reports, 603 for the year. Northern Lights Wildlife Society, Smithers: 100+ cubs, peaking above 120.</p></div>
+    <div class="row"><span class="tag">Careful</span><p>Say <strong>2023</strong> out loud. 2025 was a 15-year <em>low</em> — imply kills are peaking now and you'll get corrected in the comments.</p></div>
   </div>
 </div>
 
 <div class="slide">
-  <div class="mock"><div class="idx">Slide 6 · the cost</div>
-    <p class="copy">In <em>2023</em> — B.C.'s worst fire and drought year on record — conservation officers killed <em>603</em> black bears.<br><br>The most in a decade.</p>
-  </div>
-  <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Sombre. Empty green bin, garbage bags at a curb, or a road at dusk. <strong>Not</strong> a dead bear.</p></div>
-    <div class="row"><span class="tag">Source</span><p>CBC / BCCOS: 460 killed in the first 9 months of 2023 across 21,000 conflict reports; 603 for the full year.</p></div>
-    <div class="row"><span class="tag">Careful</span><p>Say <strong>2023</strong> out loud. 2025 was a 15-year <em>low</em> — if you imply kills are peaking right now, someone will correct you in the comments and you'll lose the room.</p></div>
-  </div>
-</div>
-
-<div class="slide">
-  <div class="mock"><div class="idx">Slide 7 · the orphans</div>
-    <p class="copy">That same autumn, one shelter in Smithers took in more than <em>100</em> orphaned cubs.<br><br>The most in 33 years of operating.</p>
-  </div>
-  <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Cub. Any cub. This is the most shareable slide in the deck.</p></div>
-    <div class="row"><span class="tag">Source</span><p>Northern Lights Wildlife Society, Smithers — 100+ cubs by end of 2023 after the drought and fire season, peaking above 120.</p></div>
-  </div>
-</div>
-
-<div class="slide">
-  <div class="mock center"><div class="idx">Slide 8 · the ask</div>
-    <p class="kicker">109 fires are burning in B.C. today</p>
+  <div class="mock center"><div class="idx">8 · the ask</div>
+    <p class="kicker">Fires are burning across B.C. right now</p>
     <p class="copy">The bears will survive the fire.<br><br>What they might not survive is what we leave out for them when they come looking.<br><br>Lock the bins. Pick the fruit. Feeders down until November.</p>
   </div>
   <div class="meta">
-    <div class="row"><span class="tag">Image</span><p>Your own trail footage or a clean landscape. Bring it home to where the viewer lives.</p></div>
-    <div class="row"><span class="tag">Why</span><p>"A fed bear is a dead bear" stays <em>unsaid</em> — you've just spent seven slides proving it, and letting the audience land it themselves is what gets it typed into the comments.</p></div>
+    <div class="row"><span class="tag">Why</span><p>"A fed bear is a dead bear" stays unsaid. You've spent two posts proving it — let the comments say it for you.</p></div>
+    <div class="row"><span class="tag">Careful</span><p>Check the live fire count the morning you post if you put a number on this slide.</p></div>
   </div>
 </div>
+
+<h2>Then the general posting</h2>
+<p class="sect-note">To your last question — the ratio that works is roughly one character post to two or three general ones.</p>
+<ul>
+  <li><strong>Character posts recruit.</strong> They're the spike and the follow. But they burn out fast if that's all you run — nobody follows a soap opera about a bear they can't visit.</li>
+  <li><strong>General posts retain.</strong> The moose re-cut, "that's the mistake," the safety evergreens. These prove the account is worth keeping in the feed, and they're what the new followers actually stay for.</li>
+  <li><strong>Come back to 222 when there's news</strong> — dispersal confirmed, a sighting, next year's fire season. Not on a schedule. A character post with nothing new to say is how you kill the character.</li>
+</ul>
 
 <div class="callout">
-  <p><strong>Check the fire count the morning you post.</strong> The 109 figure is from Aug 1. If it's moved, update slide 8 — a stale number on the one slide that says "today" is the kind of thing that gets caught.</p>
-</div>
-
-<h2>Caption</h2>
-<div class="cap">
-  <p class="mono">Grizzly 222 walked her cubs to the river and survived the Jasper fire. It's what came after that nearly killed them. 🐻‍❄️🔥<br><br>With 109 fires burning in B.C. right now, this is the year to be relentless about attractants. Bins locked, fruit picked, feeders down.<br><br>Sources in comments.<br><br>#bcwildfire #bears #bearsafety #wildlife #britishcolumbia #grizzly #bcwildfires #wildfireseason #beawarebearaware #vancouver</p>
-</div>
-
-<div class="callout">
-  <p><strong>Pin a first comment with your three sources</strong> (the 2022 <em>Global Change Biology</em> review, the CBC bear-kill data, Northern Lights Wildlife Society). Costs nothing, kills the "source?" replies, and it's what makes a marine biologist's account read differently from a repost farm.</p>
-  <p><strong>Then ask a question in the comments</strong> once it's live — <em>"Has a bear ever come through your yard during a fire year?"</em> Story-prompts outperform opinion-prompts, and the Grinder posts already proved your audience will tell you things.</p>
-</div>
-
-<h2>The rest of the week</h2>
-<p class="sect-note">One post a day. Three pillars, one identity.</p>
-<div class="week">
-  <div class="day">
-    <div class="when">Tomorrow</div>
-    <div class="what"><h4>The fire isn't what kills them</h4><p>Tragedy pillar, live news. Post in the morning and work the comments for the first hour.</p></div>
-  </div>
-  <div class="day">
-    <div class="when">+2 days</div>
-    <div class="what"><h4>Moose re-cut</h4><p>New slide 1: <em>"There's one animal on the trail even grizzlies think twice about."</em> The 52% moves to slide 3 as the payoff. New opening frame, so no duplicate-content risk.</p></div>
-  </div>
-  <div class="day">
-    <div class="when">Weekend</div>
-    <div class="what"><h4>"That's the mistake" evergreen</h4><p>Your 6K format. Catches the new followers this week brings in and shows them what the account actually is.</p></div>
-  </div>
-</div>
-
-<div class="callout">
-  <p><strong>Don't privatize the moose post.</strong> A 61-view post doesn't suppress your account — that's a myth. Since the re-cut opens on a different frame, there's no duplicate risk either. Leave it up.</p>
+  <p><strong>The bigger play, when you're ready.</strong> Grinder belonged to Grouse Mountain. 222 belongs to Parks Canada. Neither is yours — you're borrowing other people's characters, and 222 is an Alberta bear being shown to a BC-heavy audience.</p>
+  <p>If TrailBear is collecting sightings, the account can mint its <em>own</em> named bear — a local one, followed through user reports. That's a character nobody can take back, it renews itself indefinitely, and following it is a reason to install the app. That's the version of this idea with a moat.</p>
 </div>
 
 <footer>
-  Sources — <a href="https://onlinelibrary.wiley.com/doi/10.1111/gcb.16044">Nimmo et al. 2022, <em>Animal mortality during fire</em>, Global Change Biology</a> · <a href="https://www.cbc.ca/news/canada/edmonton/alberta-jasper-wildfire-bear-wildlife-1.7279635">CBC, Bear 222 and the Jasper wildfire</a> · <a href="https://www.cbc.ca/news/canada/british-columbia/bc-black-bear-safety-1.7020555">CBC, black bears killed by B.C. conservation officers</a> · <a href="https://thenarwhal.ca/inside-bc-baby-bear-orphanage/">The Narwhal, inside a B.C. bear orphanage</a> · <a href="https://globalnews.ca/news/11963207/bc-wildfire-map-2026-live/">Global News, B.C. wildfire map 2026</a>
+  Sources — <a href="https://www.cbc.ca/news/canada/edmonton/alberta-jasper-wildfire-bear-wildlife-1.7279635">CBC, Bear 222 and the Jasper wildfire</a> · <a href="https://www.cbsnews.com/news/mother-bear-cubs-survive-jasper-national-park-fire-photos/">CBS News, the sow and cubs that survived</a> · <a href="https://www.rmoutlook.com/banff/gps-collars-tracking-how-bears-respond-to-scorched-landscape-in-wake-of-jasper-wildfire-11766241">Rocky Mountain Outlook, collars after the fire</a> · <a href="https://www.jasperlocal.com/2025/06/19/the-bear-necessities/">The Jasper Local, the bear necessities</a> · <a href="https://onlinelibrary.wiley.com/doi/10.1111/gcb.16044">Nimmo et al. 2022, Global Change Biology</a> · <a href="https://www.cbc.ca/news/canada/british-columbia/bc-black-bear-safety-1.7020555">CBC, B.C. bear kills</a> · <a href="https://thenarwhal.ca/inside-bc-baby-bear-orphanage/">The Narwhal, B.C. bear orphanage</a>
 </footer>
 
 </div>
