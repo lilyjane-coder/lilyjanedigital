@@ -1,0 +1,279 @@
+<title>TrailBear — Wildfire Carousel</title>
+<style>
+  :root {
+    --char:#14170F; --char-2:#1E231A; --ash:#F2EDE4; --ember:#D98A3A;
+    --scorch:#B8512A; --sage:#878E76;
+    --bg:#FBF9F4; --surface:#FFFFFF; --ink:#1F241B; --ink-2:#5C6455;
+    --rule:#E2DDD0; --accent:#A8541F; --accent-soft:#F5E9DC;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#12150F; --surface:#191D15; --ink:#EDE9DE; --ink-2:#9AA28E;
+           --rule:#2A3024; --accent:#E0964A; --accent-soft:#26200F; }
+  }
+  :root[data-theme="dark"]{ --bg:#12150F; --surface:#191D15; --ink:#EDE9DE; --ink-2:#9AA28E;
+           --rule:#2A3024; --accent:#E0964A; --accent-soft:#26200F; }
+  :root[data-theme="light"]{ --bg:#FBF9F4; --surface:#FFFFFF; --ink:#1F241B; --ink-2:#5C6455;
+           --rule:#E2DDD0; --accent:#A8541F; --accent-soft:#F5E9DC; }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+  .serif{font-family:"Iowan Old Style",Georgia,"Times New Roman",serif}
+
+  header{border-bottom:1px solid var(--rule);padding-bottom:28px;margin-bottom:36px}
+  .eyebrow{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:12px
+  }
+  h1{
+    font-family:"Iowan Old Style",Georgia,serif;font-weight:400;
+    font-size:clamp(28px,6vw,40px);line-height:1.15;margin:0 0 12px;text-wrap:balance
+  }
+  .sub{color:var(--ink-2);font-size:16px;margin:0;max-width:60ch}
+
+  h2{
+    font-family:"Iowan Old Style",Georgia,serif;font-weight:400;
+    font-size:clamp(22px,4.5vw,28px);margin:56px 0 6px;text-wrap:balance
+  }
+  .sect-note{color:var(--ink-2);font-size:15px;margin:0 0 28px}
+
+  /* ---- slide mockups ---- */
+  .slide{
+    margin:0 0 14px;border:1px solid var(--rule);border-radius:10px;
+    background:var(--surface);overflow:hidden
+  }
+  .mock{
+    position:relative;aspect-ratio:4/5;width:100%;
+    background:
+      radial-gradient(120% 80% at 70% 15%, #33352A 0%, transparent 55%),
+      linear-gradient(178deg,#20241A 0%,#14170F 62%,#0C0E08 100%);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:30px 26px 32px;color:var(--ash)
+  }
+  .mock.center{justify-content:center}
+  .mock::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(0,0,0,.28) 0%,transparent 34%,rgba(0,0,0,.5) 100%)
+  }
+  .mock > *{position:relative;z-index:1}
+  .idx{
+    position:absolute;top:16px;left:20px;z-index:2;
+    font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sage);font-weight:600
+  }
+  .copy{
+    font-family:"Iowan Old Style",Georgia,serif;font-weight:400;
+    font-size:clamp(20px,4.6vw,27px);line-height:1.28;margin:0;
+    text-wrap:balance;text-shadow:0 2px 14px rgba(0,0,0,.7)
+  }
+  .copy em{font-style:normal;color:var(--ember)}
+  .big{
+    font-family:"Iowan Old Style",Georgia,serif;
+    font-size:clamp(52px,15vw,86px);line-height:1;color:var(--ember);
+    margin:0 0 10px;text-shadow:0 2px 18px rgba(0,0,0,.6)
+  }
+  .kicker{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--sage);margin:0 0 14px;font-weight:600
+  }
+  .meta{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px}
+  .row{display:flex;gap:12px;align-items:baseline}
+  .tag{
+    flex-shrink:0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);background:var(--accent-soft);
+    padding:3px 8px;border-radius:4px
+  }
+  .row p{margin:0;font-size:14.5px;color:var(--ink-2)}
+  .row p strong{color:var(--ink);font-weight:600}
+
+  .callout{
+    border-left:3px solid var(--accent);background:var(--accent-soft);
+    padding:16px 18px;border-radius:0 8px 8px 0;margin:24px 0
+  }
+  .callout p{margin:0;font-size:14.5px}
+  .callout p + p{margin-top:8px}
+
+  .cap{
+    background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+    padding:20px;font-size:15px
+  }
+  .cap .mono{
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:13.5px;color:var(--ink-2);word-break:break-word;line-height:1.7
+  }
+
+  ul{padding-left:20px;margin:12px 0}
+  li{margin-bottom:9px;font-size:15px}
+  li::marker{color:var(--accent)}
+
+  .week{border-top:1px solid var(--rule);margin-top:12px}
+  .day{
+    display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);
+    align-items:flex-start
+  }
+  .day .when{
+    flex:0 0 88px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:700;color:var(--accent);padding-top:3px
+  }
+  .day .what{flex:1}
+  .day .what h4{margin:0 0 3px;font-size:15.5px;font-weight:600}
+  .day .what p{margin:0;font-size:14px;color:var(--ink-2)}
+
+  footer{
+    margin-top:56px;padding-top:24px;border-top:1px solid var(--rule);
+    font-size:13px;color:var(--ink-2)
+  }
+  footer a{color:var(--accent)}
+  @media (max-width:520px){
+    .day{flex-direction:column;gap:4px}
+    .day .when{flex:none}
+  }
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">TrailBear · Carousel script</div>
+  <h1>The fire isn't what kills them</h1>
+  <p class="sub">Eight slides for tomorrow. Tragedy pillar, live-news timing, lands on the safety lane. Every figure below is sourced and dated — check the notes before you publish.</p>
+</header>
+
+<h2>Why this one, and why tomorrow</h2>
+<p class="sect-note">Your instinct on the wildfire angle was the right call — it's a stronger post than the moose re-cut, and it's the one that decays if you wait.</p>
+<ul>
+  <li><strong>It's live news.</strong> 109 fires are burning in B.C. right now. That's the same ingredient that made the Grinder post work — you're answering a question people are already asking.</li>
+  <li><strong>It's your pillar, done right.</strong> Not "bears die" — a named bear with a story, at stakes. Grizzly 222 walking her cubs out of the Jasper fire is the emotional spine.</li>
+  <li><strong>It converts.</strong> The grief lands on "secure your attractants," which is the account's actual job. Tragedy in, safety out.</li>
+  <li><strong>The hook inverts an assumption.</strong> Same engine as your 6K "oversized raccoons" post — the reader is wrong about something, and the swipe tells them how.</li>
+</ul>
+
+<h2>The slides</h2>
+<p class="sect-note">Copy is final — lift it as written. Mockups show placement and emphasis; drop your photo behind each.</p>
+
+<div class="slide">
+  <div class="mock center"><div class="idx">Slide 1 · hook</div>
+    <p class="copy">Everyone pictures bears dying in the flames.<br><br>That's not how a wildfire kills a bear.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Wall of fire, or a bear silhouetted against orange smoke. <strong>Most dramatic frame you have</strong> — this slide's only job is the stop.</p></div>
+    <div class="row"><span class="tag">Why</span><p>States a surprising claim but withholds the mechanism. That's the gap the swipe closes — the thing your moose slide 1 gave away.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">Slide 2 · credibility</div>
+    <p class="big">3%</p>
+    <p class="copy">Researchers pulled together 31 studies that tracked collared animals straight through a wildfire. On average, the fire itself killed three percent of them.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Quiet burned forest, black trunks. Let the number carry it.</p></div>
+    <div class="row"><span class="tag">Source</span><p>Nimmo et al., <em>Global Change Biology</em> 2022 — 31 species, 23 families, 1984–2020. Mean predicted mortality 3% (CI 1–9%). Severe fires 7%, mild 2%.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">Slide 3 · the named bear</div>
+    <p class="copy">During the Jasper fire, a grizzly called <em>222</em> took her two cubs down to the Athabasca River and waited it out.<br><br>Her GPS collar tracked the whole thing. All three walked away.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Sow with cubs, or a river running through burned country. Warmest image in the deck — this is the hope beat.</p></div>
+    <div class="row"><span class="tag">Why</span><p>Your pillar is <strong>named bears with stories</strong>. This is the slide people screenshot, and it sets up the drop on slide 4.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">Slide 4 · the turn</div>
+    <p class="copy">Then the smoke clears, and she walks her cubs back into a home range with nothing left in it.<br><br>No berries. No roots. No cover.<br><br>And winter is nine weeks out.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Wide burn scar, ash, no green. Coldest, emptiest frame you have.</p></div>
+    <div class="row"><span class="tag">Why</span><p>The pivot. Slide 3 gave relief, this takes it back — that whiplash is what drives comments.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">Slide 5 · mechanism</div>
+    <p class="copy">A bear that can't fatten up doesn't survive hibernation.<br><br>So it stops looking in the burn and starts looking downhill — orchards, campgrounds, green bins.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Bear on a road, near a fence line, or at the edge of a subdivision.</p></div>
+    <div class="row"><span class="tag">Why</span><p>Where the post stops being about fire and starts being about us. Don't rush this line.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">Slide 6 · the cost</div>
+    <p class="copy">In <em>2023</em> — B.C.'s worst fire and drought year on record — conservation officers killed <em>603</em> black bears.<br><br>The most in a decade.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Sombre. Empty green bin, garbage bags at a curb, or a road at dusk. <strong>Not</strong> a dead bear.</p></div>
+    <div class="row"><span class="tag">Source</span><p>CBC / BCCOS: 460 killed in the first 9 months of 2023 across 21,000 conflict reports; 603 for the full year.</p></div>
+    <div class="row"><span class="tag">Careful</span><p>Say <strong>2023</strong> out loud. 2025 was a 15-year <em>low</em> — if you imply kills are peaking right now, someone will correct you in the comments and you'll lose the room.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock"><div class="idx">Slide 7 · the orphans</div>
+    <p class="copy">That same autumn, one shelter in Smithers took in more than <em>100</em> orphaned cubs.<br><br>The most in 33 years of operating.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Cub. Any cub. This is the most shareable slide in the deck.</p></div>
+    <div class="row"><span class="tag">Source</span><p>Northern Lights Wildlife Society, Smithers — 100+ cubs by end of 2023 after the drought and fire season, peaking above 120.</p></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="mock center"><div class="idx">Slide 8 · the ask</div>
+    <p class="kicker">109 fires are burning in B.C. today</p>
+    <p class="copy">The bears will survive the fire.<br><br>What they might not survive is what we leave out for them when they come looking.<br><br>Lock the bins. Pick the fruit. Feeders down until November.</p>
+  </div>
+  <div class="meta">
+    <div class="row"><span class="tag">Image</span><p>Your own trail footage or a clean landscape. Bring it home to where the viewer lives.</p></div>
+    <div class="row"><span class="tag">Why</span><p>"A fed bear is a dead bear" stays <em>unsaid</em> — you've just spent seven slides proving it, and letting the audience land it themselves is what gets it typed into the comments.</p></div>
+  </div>
+</div>
+
+<div class="callout">
+  <p><strong>Check the fire count the morning you post.</strong> The 109 figure is from Aug 1. If it's moved, update slide 8 — a stale number on the one slide that says "today" is the kind of thing that gets caught.</p>
+</div>
+
+<h2>Caption</h2>
+<div class="cap">
+  <p class="mono">Grizzly 222 walked her cubs to the river and survived the Jasper fire. It's what came after that nearly killed them. 🐻‍❄️🔥<br><br>With 109 fires burning in B.C. right now, this is the year to be relentless about attractants. Bins locked, fruit picked, feeders down.<br><br>Sources in comments.<br><br>#bcwildfire #bears #bearsafety #wildlife #britishcolumbia #grizzly #bcwildfires #wildfireseason #beawarebearaware #vancouver</p>
+</div>
+
+<div class="callout">
+  <p><strong>Pin a first comment with your three sources</strong> (the 2022 <em>Global Change Biology</em> review, the CBC bear-kill data, Northern Lights Wildlife Society). Costs nothing, kills the "source?" replies, and it's what makes a marine biologist's account read differently from a repost farm.</p>
+  <p><strong>Then ask a question in the comments</strong> once it's live — <em>"Has a bear ever come through your yard during a fire year?"</em> Story-prompts outperform opinion-prompts, and the Grinder posts already proved your audience will tell you things.</p>
+</div>
+
+<h2>The rest of the week</h2>
+<p class="sect-note">One post a day. Three pillars, one identity.</p>
+<div class="week">
+  <div class="day">
+    <div class="when">Tomorrow</div>
+    <div class="what"><h4>The fire isn't what kills them</h4><p>Tragedy pillar, live news. Post in the morning and work the comments for the first hour.</p></div>
+  </div>
+  <div class="day">
+    <div class="when">+2 days</div>
+    <div class="what"><h4>Moose re-cut</h4><p>New slide 1: <em>"There's one animal on the trail even grizzlies think twice about."</em> The 52% moves to slide 3 as the payoff. New opening frame, so no duplicate-content risk.</p></div>
+  </div>
+  <div class="day">
+    <div class="when">Weekend</div>
+    <div class="what"><h4>"That's the mistake" evergreen</h4><p>Your 6K format. Catches the new followers this week brings in and shows them what the account actually is.</p></div>
+  </div>
+</div>
+
+<div class="callout">
+  <p><strong>Don't privatize the moose post.</strong> A 61-view post doesn't suppress your account — that's a myth. Since the re-cut opens on a different frame, there's no duplicate risk either. Leave it up.</p>
+</div>
+
+<footer>
+  Sources — <a href="https://onlinelibrary.wiley.com/doi/10.1111/gcb.16044">Nimmo et al. 2022, <em>Animal mortality during fire</em>, Global Change Biology</a> · <a href="https://www.cbc.ca/news/canada/edmonton/alberta-jasper-wildfire-bear-wildlife-1.7279635">CBC, Bear 222 and the Jasper wildfire</a> · <a href="https://www.cbc.ca/news/canada/british-columbia/bc-black-bear-safety-1.7020555">CBC, black bears killed by B.C. conservation officers</a> · <a href="https://thenarwhal.ca/inside-bc-baby-bear-orphanage/">The Narwhal, inside a B.C. bear orphanage</a> · <a href="https://globalnews.ca/news/11963207/bc-wildfire-map-2026-live/">Global News, B.C. wildfire map 2026</a>
+</footer>
+
+</div>
